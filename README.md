@@ -2,14 +2,17 @@
 `npm i && npm run build`  
 `npm run test`
 
-to run the simple iterative solution:  
+to run the simple iterative solution:
+
 `cd build && node simpleIterationSolution.js`
 
 ## The Problem
 
-Write a function that accepts a single string as input, and that returns a list of English words that can be created using some combination of the letters in the input string.
-Example input: "oogd"
-Example output: ["good", "god", "dog", "goo", "do", "go"]
+Write a function that accepts a single string as input, and that returns a list of English words that can be created using some combination of the letters in the input string.  
+
+Example input: "oogd"  
+Example output: ["good", "god", "dog", "goo", "do", "go"]  
+
 You can assume you'll be given an array of strings that enumerates all valid English words. To determine whether a word is a valid word, you can simply check for its presence in the array (e.g., `WORDS.includes(word)`)
 
 
@@ -25,7 +28,9 @@ Phrased differently, the challenge here is to find which, if any, of all permuta
 The first thought is to generate all permutations of all subsets, and filter out the words from the resulting list.
 
 
-However, there are 2^N possible subsets of a list of N length, so a 20 character word will have over a million subsets . Permutations are even more complex at O(n * n!), so attempting to solve the problem in this manner will quickly leady to OOM errors (or extremely long runtimes, if using memory-safe algorithms like a permutation generator function).
+However, there are 2^N possible subsets of a list of N length, so a 20 character word will have over a million subsets. 
+
+Permutations are even more complex at O(n * n!), so attempting to solve the problem in this manner will quickly leady to OOM errors (or extremely long runtimes, if using memory-safe algorithms like a permutation generator function).
 
 
 ### Simple Iterative Approach
